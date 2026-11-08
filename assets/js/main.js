@@ -10,7 +10,7 @@
     return s;
   };
   const CLIENTS = [
-    ['palm-hills', 'Palm Hills'], ['tatweer', 'Tatweer Misr'], ['sodic', 'SODIC'], ['emaar-misr', 'Emaar Misr (Marassi)'],
+    ['palm-hills', 'Palm Hills'], ['tatweer', 'Tatweer Misr'], ['sodic', 'SODIC'], ['emaar-misr-hq', 'Emaar Misr (Marassi)'],
     ['ahly', 'Al Ahly Sporting Club'], ['newgiza', 'New Giza'], ['orascom', 'Orascom Development'], ['hassan-allam', 'Hassan Allam'],
     ['pepsi', 'Pepsi'], ['jaz', 'Jaz Hotel Group'], ['fort-arabesque', 'Fort Arabesque Resort']
   ];
