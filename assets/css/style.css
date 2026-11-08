@@ -133,11 +133,12 @@ html[lang="ar"] .lang span{font-family:var(--head)}
 .contact__in{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .contact__info>p:not(.eyebrow){color:var(--muted);margin-top:1rem}
 .cards{list-style:none;display:grid;gap:.8rem;margin-top:2rem}
-.cards a{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:14px;transition:.2s;word-break:break-word}
+.cards a{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:14px;transition:.2s}
 .cards a:hover{border-color:var(--orange);box-shadow:var(--shadow)}
 .cards i{flex:none;width:44px;height:44px;border-radius:12px;background:var(--tint);color:var(--orange);display:grid;place-items:center;font-style:normal;font-size:1.25rem}
 .cards small{display:block;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
-.cards span{font-weight:600;color:var(--navy)}
+.cards span{font-weight:600;color:var(--navy);min-width:0}
+.cards bdi{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .form{background:var(--tint);padding:2.2rem;border-radius:var(--r);display:grid;gap:1rem}
 .form h3{font-size:1.4rem}
 .form label{display:grid;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--navy)}
@@ -199,6 +200,9 @@ html[lang="ar"] .lang span{font-family:var(--head)}
   .about__img{padding-inline-end:2rem;padding-bottom:2rem}
 }
 @media (max-width:600px){
+  .cards a{padding:.9rem 1rem;gap:.8rem}
+  .cards i{width:38px;height:38px;font-size:1.1rem}
+  .cards bdi{font-size:clamp(.8rem,3.5vw,1rem)}
   .logos{gap:.7rem}
   .logos li{flex-basis:calc(50% - .35rem);min-width:0;height:96px;padding:1rem}
   .logos img{max-height:52px}
