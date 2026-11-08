@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="Partners Construction">
+  <g fill="none" stroke-width="13">
+    <circle cx="58" cy="60" r="44" stroke="#FFFFFF"/>
+    <circle cx="112" cy="60" r="44" stroke="#F47B20"/>
+    <path d="M94 85.2 A44 44 0 0 1 73 101.3" stroke="#FFFFFF"/>
+  </g>
+  <text x="178" y="62" font-family="Montserrat, 'Segoe UI', Arial, sans-serif" font-weight="800" font-size="58" fill="#FFFFFF" letter-spacing="1">PARTNERS</text>
+  <rect x="180" y="74" width="368" height="3" fill="#FFFFFF"/>
+  <text x="182" y="106" font-family="Montserrat, 'Segoe UI', Arial, sans-serif" font-weight="700" font-size="22" fill="#FFFFFF" letter-spacing="11.5">CONSTRUCTION</text>
+</svg>
