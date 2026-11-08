@@ -1,39 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Partners for Construction | Aqua Parks, Swimming Pools, Fountains & Outdoor Works in Egypt</title>
 <meta name="description" content="Partners for Construction designs, supplies and builds aqua parks, water slides, swimming pools, water fountains, kids play areas, sports courts, shades and site furniture across Egypt. Formerly Demas for Construction and Blue for Construction & Supplies.">
+<script>
+  /* Pick language before paint to avoid a flash of the wrong direction */
+  (function () {
+    var l = new URLSearchParams(location.search).get('lang');
+    if (l !== 'ar' && l !== 'en') { try { l = localStorage.getItem('pfc-lang'); } catch (e) {} }
+    if (l === 'ar') { document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl'; }
+  })();
+</script>
 <meta name="theme-color" content="#12284B">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="alternate" hreflang="en" href="?lang=en">
+<link rel="alternate" hreflang="ar" href="?lang=ar">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Partners for Construction">
+<meta property="og:title" content="Partners for Construction | بارتنرز للمقاولات">
 <meta property="og:description" content="Aqua parks, swimming pools, water fountains, kids play areas, sports courts, shades and site furniture. Design, supply and installation across Egypt.">
 <meta property="og:image" content="assets/projects/aqua-aqua-park-maintenance-rehabilitation-marassi-water-world-aqua-park-1.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"GeneralContractor","name":"Partners for Construction","alternateName":["Demas for Construction","Blue for Construction and Supplies"],"telephone":"+201118161858","email":"partnersforconstruction@gmail.com","areaServed":"Egypt","address":{"@type":"PostalAddress","addressCountry":"EG"},"sameAs":["https://www.instagram.com/partnersforconstruction/"]}
+{"@context":"https://schema.org","@type":"GeneralContractor","name":"Partners for Construction","alternateName":["بارتنرز للمقاولات","Demas for Construction","Blue for Construction and Supplies"],"telephone":"+201118161858","email":"partnersforconstruction@gmail.com","areaServed":"Egypt","address":{"@type":"PostalAddress","addressCountry":"EG"},"sameAs":["https://www.instagram.com/partnersforconstruction/"]}
 </script>
 </head>
 <body>
 
 <header class="nav" id="top">
   <div class="wrap nav__in">
-    <a href="#top" class="nav__logo" aria-label="Partners for Construction home"><img src="assets/img/logo.svg" alt="Partners Construction" width="210" height="45"></a>
+    <a href="#top" class="nav__logo" aria-label="Partners for Construction"><img src="assets/img/logo.svg" alt="Partners Construction" width="210" height="45"></a>
     <nav class="nav__links" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#process">How we work</a>
-      <a href="#contact">Contact</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#process" data-i18n="nav.process">How we work</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
-    <a class="btn btn--orange nav__cta" href="tel:+201118161858">Call 0111 816 1858</a>
-    <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav__right">
+      <button class="lang" id="langBtn" type="button" data-i18n-attr="aria-label:lang.label" aria-label="التبديل إلى العربية">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm-9 9h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        <span data-i18n="lang.switch">عربي</span>
+      </button>
+      <a class="btn btn--orange nav__cta" href="tel:+201118161858" data-i18n="nav.call">Call 0111 816 1858</a>
+      <button class="nav__burger" type="button" data-i18n-attr="aria-label:nav.menu" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -42,17 +58,17 @@
 <section class="hero">
   <div class="wrap hero__in">
     <div class="hero__text">
-      <p class="eyebrow">Design · Supply · Build · Maintain</p>
-      <h1>We build the places where people <span class="hl">swim, play</span> and gather.</h1>
-      <p class="lead">Aqua parks and water slides, swimming pools and water fountains, kids' play areas, sports courts, shades and site furniture. Delivered turnkey for Egypt's leading developers, resorts and sporting clubs.</p>
+      <p class="eyebrow" data-i18n="hero.eyebrow">Design · Supply · Build · Maintain</p>
+      <h1 data-i18n-html="hero.title">We build the places where people <span class="hl">swim, play</span> and gather.</h1>
+      <p class="lead" data-i18n="hero.lead">Aqua parks and water slides, swimming pools and water fountains, kids' play areas, sports courts, shades and site furniture. Delivered turnkey for Egypt's leading developers, resorts and sporting clubs.</p>
       <div class="hero__btns">
-        <a href="#projects" class="btn btn--orange">Explore our projects</a>
-        <a href="https://wa.me/201118161858?text=Hello%20Partners%20for%20Construction%2C%20I%27d%20like%20a%20quote." class="btn btn--ghost" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
+        <a href="#projects" class="btn btn--orange" data-i18n="hero.cta1">Explore our projects</a>
+        <a href="https://wa.me/201118161858" id="heroWa" class="btn btn--ghost" target="_blank" rel="noopener" data-i18n="hero.cta2">Get a quote on WhatsApp</a>
       </div>
-      <ul class="stats" aria-label="Key figures">
-        <li><strong data-count="75">75</strong><span>completed works in our portfolio</span></li>
-        <li><strong data-count="8">8</strong><span>specialist services</span></li>
-        <li><strong data-count="25">25</strong><span>clubs, resorts &amp; compounds served</span></li>
+      <ul class="stats">
+        <li><strong>75</strong><span data-i18n="stat.1">completed works in our portfolio</span></li>
+        <li><strong>8</strong><span data-i18n="stat.2">specialist services</span></li>
+        <li><strong>25</strong><span data-i18n="stat.3">clubs, resorts &amp; compounds served</span></li>
       </ul>
     </div>
     <div class="hero__mosaic" aria-hidden="true">
@@ -60,67 +76,57 @@
       <img class="m2" src="assets/projects/pools-pools-water-fountains-bloom-fields-tatweer-misr-1.jpg" alt="">
       <img class="m3" src="assets/projects/kids-kids-play-area-palm-hills-sporting-club-1.jpg" alt="">
       <img class="m4" src="assets/projects/aqua-aqua-park-water-slides-palm-hills-sporting-club-1.jpg" alt="">
-      <div class="hero__badge"><span>Now one company</span><b>Demas + Blue</b><em>are Partners for Construction</em></div>
+      <div class="hero__badge"><span data-i18n="badge.top">Now one company</span><b data-i18n="badge.mid">Demas + Blue</b><em data-i18n="badge.bot">are Partners for Construction</em></div>
     </div>
   </div>
 </section>
 
 <!-- CLIENTS -->
-<section class="clients" aria-label="Projects delivered for">
-  <p class="clients__label">Delivered for Egypt's leading developers, resorts &amp; clubs</p>
-  <div class="marquee"><div class="marquee__track">
-    <span>Palm Hills</span><span>Tatweer Misr</span><span>SODIC</span><span>Marassi</span><span>Al Ahly Sporting Club</span><span>New Giza</span><span>Orascom · Makadi Heights</span><span>Hassan Allam · Kode</span><span>Pepsi</span><span>Gezira Sporting Club</span><span>Porto Matrouh</span><span>Jaz Hotels</span><span>Fort Arabesque</span><span>Smash Sporting Club</span>
-  </div></div>
+<section class="clients">
+  <p class="clients__label" data-i18n="clients.label">Delivered for Egypt's leading developers, resorts &amp; clubs</p>
+  <div class="marquee" dir="ltr"><div class="marquee__track" id="clients"></div></div>
 </section>
 
 <!-- SERVICES -->
 <section class="section" id="services">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">What we do</p>
-      <h2>Eight specialties, one accountable partner</h2>
-      <p>From the first sketch to final handover and after-sales maintenance, we take care of design, supply, civil works and installation.</p>
+      <p class="eyebrow" data-i18n="svc.eyebrow">What we do</p>
+      <h2 data-i18n="svc.title">Eight specialties, one accountable partner</h2>
+      <p data-i18n="svc.lead">From the first sketch to final handover and after-sales maintenance, we take care of design, supply, civil works and installation.</p>
     </div>
     <div class="services">
       <article class="svc" data-filter="aqua">
-        <img src="assets/projects/aqua-aqua-park-maintenance-rehabilitation-marassi-water-world-aqua-park-3.jpg" alt="Large water slides at an aqua park" loading="lazy">
-        <div class="svc__body"><span class="svc__n">01</span><h3>Aqua Parks &amp; Water Slides</h3>
-        <p>Complete aqua parks with body slides, tube slides, family rafts and towers, plus rehabilitation and maintenance of existing parks.</p></div>
+        <img src="assets/projects/aqua-aqua-park-maintenance-rehabilitation-marassi-water-world-aqua-park-3.jpg" alt="" loading="lazy">
+        <div class="svc__body"><span class="svc__n">01</span><h3 data-i18n="svc.1.t">Aqua Parks &amp; Water Slides</h3><p data-i18n="svc.1.d"></p></div>
       </article>
       <article class="svc" data-filter="aqua">
-        <img src="assets/projects/aqua-aqua-park-water-slides-palm-hills-sporting-club-1.jpg" alt="Kids water play structure with slides in a pool" loading="lazy">
-        <div class="svc__body"><span class="svc__n">02</span><h3>Kids' Pool Slides &amp; Splash Pads</h3>
-        <p>Colourful water play structures, mini slides, tipping buckets and splash pads designed for safe fun in children's pools.</p></div>
+        <img src="assets/projects/aqua-aqua-park-water-slides-palm-hills-sporting-club-1.jpg" alt="" loading="lazy">
+        <div class="svc__body"><span class="svc__n">02</span><h3 data-i18n="svc.2.t">Kids' Pool Slides &amp; Splash Pads</h3><p data-i18n="svc.2.d"></p></div>
       </article>
       <article class="svc" data-filter="pools">
-        <img src="assets/projects/pools-swimming-pool-new-giza-sporting-club-1.jpg" alt="Competition swimming pool with lanes" loading="lazy">
-        <div class="svc__body"><span class="svc__n">03</span><h3>Swimming Pools</h3>
-        <p>Olympic and competition pools, club and compound pools, and private villa pools: structure, waterproofing, tiling, filtration and plant rooms.</p></div>
+        <img src="assets/projects/pools-swimming-pool-new-giza-sporting-club-1.jpg" alt="" loading="lazy">
+        <div class="svc__body"><span class="svc__n">03</span><h3 data-i18n="svc.3.t">Swimming Pools</h3><p data-i18n="svc.3.d"></p></div>
       </article>
       <article class="svc" data-filter="pools">
-        <img src="assets/projects/pools-pools-water-fountains-bloom-fields-tatweer-misr-1.jpg" alt="Water fountain jets in a pool" loading="lazy">
-        <div class="svc__body"><span class="svc__n">04</span><h3>Water Fountains &amp; Features</h3>
-        <p>Decorative fountains, jets, water walls and landscape water features that bring movement and sound to plazas, lobbies and gardens.</p></div>
+        <img src="assets/projects/pools-pools-water-fountains-bloom-fields-tatweer-misr-1.jpg" alt="" loading="lazy">
+        <div class="svc__body"><span class="svc__n">04</span><h3 data-i18n="svc.4.t">Water Fountains &amp; Features</h3><p data-i18n="svc.4.d"></p></div>
       </article>
       <article class="svc" data-filter="kids">
-        <img src="assets/projects/kids-kids-play-area-palm-hills-sporting-club-1.jpg" alt="Kids play area with slide and climbing equipment" loading="lazy">
-        <div class="svc__body"><span class="svc__n">05</span><h3>Kids Play Areas</h3>
-        <p>Play towers, slides, climbing nets and themed wooden play equipment, finished with EPDM rubber safety flooring.</p></div>
+        <img src="assets/projects/kids-kids-play-area-palm-hills-sporting-club-1.jpg" alt="" loading="lazy">
+        <div class="svc__body"><span class="svc__n">05</span><h3 data-i18n="svc.5.t">Kids Play Areas</h3><p data-i18n="svc.5.d"></p></div>
       </article>
       <article class="svc" data-filter="sports">
-        <img src="assets/projects/sports-red-clay-tennis-court-d-bay-tatweer-misr-1.jpg" alt="Red clay tennis court" loading="lazy">
-        <div class="svc__body"><span class="svc__n">06</span><h3>Sports Courts &amp; Athletic Surfaces</h3>
-        <p>Padel and tennis courts, artificial turf pitches, acrylic multi-purpose courts, running tracks and rubber gym flooring.</p></div>
+        <img src="assets/projects/sports-red-clay-tennis-court-d-bay-tatweer-misr-1.jpg" alt="" loading="lazy">
+        <div class="svc__body"><span class="svc__n">06</span><h3 data-i18n="svc.6.t">Sports Courts &amp; Athletic Surfaces</h3><p data-i18n="svc.6.d"></p></div>
       </article>
       <article class="svc" data-filter="shades">
-        <img src="assets/projects/shades-tensile-circular-fabric-canopy-palm-hills-sporting-club-1.jpg" alt="Circular tensile fabric canopy shades" loading="lazy">
-        <div class="svc__body"><span class="svc__n">07</span><h3>Shades &amp; Pergolas</h3>
-        <p>Steel, timber, straw and tensile fabric shades, CNC steel pergolas, car shades and sculptural canopies made to measure.</p></div>
+        <img src="assets/projects/shades-tensile-circular-fabric-canopy-palm-hills-sporting-club-1.jpg" alt="" loading="lazy">
+        <div class="svc__body"><span class="svc__n">07</span><h3 data-i18n="svc.7.t">Shades &amp; Pergolas</h3><p data-i18n="svc.7.d"></p></div>
       </article>
       <article class="svc" data-filter="furniture">
-        <img src="assets/projects/structures-beach-cabanas-d-bay-tatweer-misr-1.jpg" alt="Timber beach cabanas" loading="lazy">
-        <div class="svc__body"><span class="svc__n">08</span><h3>Site Furniture &amp; Outdoor Structures</h3>
-        <p>Benches, planters, litter bins, climbing walls, beach cabanas, changing rooms, straw cladding and custom steel works.</p></div>
+        <img src="assets/projects/structures-beach-cabanas-d-bay-tatweer-misr-1.jpg" alt="" loading="lazy">
+        <div class="svc__body"><span class="svc__n">08</span><h3 data-i18n="svc.8.t">Site Furniture &amp; Outdoor Structures</h3><p data-i18n="svc.8.d"></p></div>
       </article>
     </div>
   </div>
@@ -130,13 +136,13 @@
 <section class="section section--tint" id="projects">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Our work</p>
-      <h2>Projects portfolio</h2>
-      <p>A selection of works completed by our team. Filter by category and tap any project to see its photos.</p>
+      <p class="eyebrow" data-i18n="prj.eyebrow">Our work</p>
+      <h2 data-i18n="prj.title">Projects portfolio</h2>
+      <p data-i18n="prj.lead">A selection of works completed by our team. Filter by category and tap any project to see its photos.</p>
     </div>
-    <div class="filters" role="tablist" aria-label="Filter projects"></div>
+    <div class="filters" role="tablist" data-i18n-attr="aria-label:prj.filter"></div>
     <div class="grid" id="grid"></div>
-    <div class="more"><button class="btn btn--ghost" id="more" hidden>Show all projects</button></div>
+    <div class="more"><button class="btn btn--ghost" id="more" type="button" hidden></button></div>
   </div>
 </section>
 
@@ -144,19 +150,16 @@
 <section class="section about" id="about">
   <div class="wrap about__in">
     <div class="about__img">
-      <img src="assets/projects/sports-football-pitch-at-the-pyramids-el-haram-court-pepsi-2.jpg" alt="Football pitch at the Pyramids" loading="lazy">
-      <img src="assets/projects/kids-epdm-safety-flooring-kids-area-palm-hills-sporting-club-1.jpg" alt="EPDM kids area flooring" loading="lazy">
+      <img src="assets/projects/sports-football-pitch-at-the-pyramids-el-haram-court-pepsi-2.jpg" alt="" loading="lazy">
+      <img src="assets/projects/kids-epdm-safety-flooring-kids-area-palm-hills-sporting-club-1.jpg" alt="" loading="lazy">
     </div>
     <div class="about__text">
-      <p class="eyebrow">Who we are</p>
-      <h2>Two specialist teams. One stronger partner.</h2>
-      <p><strong>Demas for Industrial &amp; Construction Solutions</strong> built its name on aqua parks, swimming pools, fountains and kids' areas. <strong>Blue for Construction &amp; Supplies</strong> built its name on sports surfaces, shades and site furniture.</p>
-      <p>Both companies have now come together under one name: <strong>Partners for Construction</strong>. Same people, same experience, now offering every service under one contract and one point of contact.</p>
+      <p class="eyebrow" data-i18n="about.eyebrow">Who we are</p>
+      <h2 data-i18n="about.title">Two specialist teams. One stronger partner.</h2>
+      <p data-i18n-html="about.p1"></p>
+      <p data-i18n-html="about.p2"></p>
       <ul class="checks">
-        <li>Turnkey delivery: design, supply, civil works &amp; installation</li>
-        <li>Trusted by top developers, resorts and sporting clubs</li>
-        <li>Projects across Egypt and abroad (Maldives)</li>
-        <li>Maintenance &amp; rehabilitation of existing facilities</li>
+        <li data-i18n="about.c1"></li><li data-i18n="about.c2"></li><li data-i18n="about.c3"></li><li data-i18n="about.c4"></li>
       </ul>
     </div>
   </div>
@@ -166,14 +169,14 @@
 <section class="section section--navy" id="process">
   <div class="wrap">
     <div class="sec-head sec-head--light">
-      <p class="eyebrow">How we work</p>
-      <h2>From idea to opening day</h2>
+      <p class="eyebrow" data-i18n="proc.eyebrow">How we work</p>
+      <h2 data-i18n="proc.title">From idea to opening day</h2>
     </div>
     <ol class="steps">
-      <li><span>01</span><h3>Consult &amp; Design</h3><p>We visit the site, understand your goals and budget, and propose layouts, materials and equipment.</p></li>
-      <li><span>02</span><h3>Supply</h3><p>Certified equipment, slides, surfaces and materials sourced and fabricated to specification.</p></li>
-      <li><span>03</span><h3>Build &amp; Install</h3><p>Our site teams handle civil works, waterproofing, steel, finishing and installation, on schedule.</p></li>
-      <li><span>04</span><h3>Handover &amp; Maintain</h3><p>Testing, commissioning, training, and maintenance contracts to keep everything safe and running.</p></li>
+      <li><span>01</span><h3 data-i18n="proc.1.t"></h3><p data-i18n="proc.1.d"></p></li>
+      <li><span>02</span><h3 data-i18n="proc.2.t"></h3><p data-i18n="proc.2.d"></p></li>
+      <li><span>03</span><h3 data-i18n="proc.3.t"></h3><p data-i18n="proc.3.d"></p></li>
+      <li><span>04</span><h3 data-i18n="proc.4.t"></h3><p data-i18n="proc.4.d"></p></li>
     </ol>
   </div>
 </section>
@@ -182,37 +185,25 @@
 <section class="section contact" id="contact">
   <div class="wrap contact__in">
     <div class="contact__info">
-      <p class="eyebrow">Let's talk</p>
-      <h2>Planning a pool, aqua park or outdoor project?</h2>
-      <p>Tell us about your site and we'll come back with ideas and a quotation.</p>
+      <p class="eyebrow" data-i18n="ct.eyebrow">Let's talk</p>
+      <h2 data-i18n="ct.title">Planning a pool, aqua park or outdoor project?</h2>
+      <p data-i18n="ct.lead">Tell us about your site and we'll come back with ideas and a quotation.</p>
       <ul class="cards">
-        <li><a href="tel:+201118161858"><i>☎</i><span><small>Call us</small>0111 816 1858</span></a></li>
-        <li><a href="https://wa.me/201118161858" target="_blank" rel="noopener"><i>✆</i><span><small>WhatsApp</small>+20 111 816 1858</span></a></li>
-        <li><a href="mailto:partnersforconstruction@gmail.com"><i>✉</i><span><small>Email</small>partnersforconstruction@gmail.com</span></a></li>
-        <li><a href="https://www.instagram.com/partnersforconstruction/" target="_blank" rel="noopener"><i>◎</i><span><small>Instagram</small>@partnersforconstruction</span></a></li>
+        <li><a href="tel:+201118161858"><i>☎</i><span><small data-i18n="ct.call">Call us</small><bdi>0111 816 1858</bdi></span></a></li>
+        <li><a href="https://wa.me/201118161858" target="_blank" rel="noopener"><i>✆</i><span><small data-i18n="ct.wa">WhatsApp</small><bdi>+20 111 816 1858</bdi></span></a></li>
+        <li><a href="mailto:partnersforconstruction@gmail.com"><i>✉</i><span><small data-i18n="ct.email">Email</small><bdi>partnersforconstruction@gmail.com</bdi></span></a></li>
+        <li><a href="https://www.instagram.com/partnersforconstruction/" target="_blank" rel="noopener"><i>◎</i><span><small data-i18n="ct.ig">Instagram</small><bdi>@partnersforconstruction</bdi></span></a></li>
       </ul>
     </div>
     <form class="form" id="quote">
-      <h3>Request a quote</h3>
-      <label>Your name<input name="name" required autocomplete="name"></label>
-      <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
-      <label>Service
-        <select name="service">
-          <option>Aqua park &amp; water slides</option>
-          <option>Kids' pool slides &amp; splash pad</option>
-          <option>Swimming pool</option>
-          <option>Water fountain</option>
-          <option>Kids play area</option>
-          <option>Sports court / surface</option>
-          <option>Shades &amp; pergolas</option>
-          <option>Site furniture / outdoor structure</option>
-          <option>Maintenance</option>
-        </select>
-      </label>
-      <label>Project details<textarea name="msg" rows="4" placeholder="Location, size, timeline..."></textarea></label>
+      <h3 data-i18n="form.title">Request a quote</h3>
+      <label><span data-i18n="form.name">Your name</span><input name="name" required autocomplete="name"></label>
+      <label><span data-i18n="form.phone">Phone</span><input name="phone" type="tel" required autocomplete="tel" dir="ltr"></label>
+      <label><span data-i18n="form.service">Service</span><select name="service" id="svcSelect"></select></label>
+      <label><span data-i18n="form.msg">Project details</span><textarea name="msg" rows="4" data-i18n-attr="placeholder:form.ph"></textarea></label>
       <div class="form__btns">
-        <button type="submit" class="btn btn--orange" data-via="wa">Send via WhatsApp</button>
-        <button type="submit" class="btn btn--line" data-via="mail">Send via Email</button>
+        <button type="submit" class="btn btn--orange" data-via="wa" data-i18n="form.wa">Send via WhatsApp</button>
+        <button type="submit" class="btn btn--line" data-via="mail" data-i18n="form.mail">Send via Email</button>
       </div>
     </form>
   </div>
@@ -223,29 +214,30 @@
   <div class="wrap footer__in">
     <div>
       <img src="assets/img/logo-white.svg" alt="Partners Construction" width="200" height="43">
-      <p>Aqua parks · Swimming pools · Water fountains · Kids areas · Sports surfaces · Shades · Site furniture</p>
-      <p class="muted">Formerly Demas for Construction and Blue for Construction &amp; Supplies.</p>
+      <p data-i18n="ft.tag">Aqua parks · Swimming pools · Water fountains · Kids areas · Sports surfaces · Shades · Site furniture</p>
+      <p class="muted" data-i18n="ft.former">Formerly Demas for Construction and Blue for Construction &amp; Supplies.</p>
     </div>
     <div class="footer__links">
-      <a href="tel:+201118161858">0111 816 1858</a>
+      <a href="tel:+201118161858"><bdi>0111 816 1858</bdi></a>
       <a href="mailto:partnersforconstruction@gmail.com">partnersforconstruction@gmail.com</a>
-      <a href="https://www.instagram.com/partnersforconstruction/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com/partnersforconstruction/" target="_blank" rel="noopener" data-i18n="ct.ig">Instagram</a>
     </div>
   </div>
-  <p class="wrap copy">© <span id="yr">2026</span> Partners for Construction. All rights reserved.</p>
+  <p class="wrap copy" id="copy">© 2026 Partners for Construction. All rights reserved.</p>
 </footer>
 
-<a class="wa-float" href="https://wa.me/201118161858" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="wa-float" href="https://wa.me/201118161858" target="_blank" rel="noopener" data-i18n-attr="aria-label:wa.float" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.3 1.4 3.5c.2.2 2.4 3.6 5.8 5.1 2.2.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.7-.4z"/></svg>
 </a>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project photos" hidden>
-  <button class="lb__close" aria-label="Close">×</button>
-  <button class="lb__nav lb__prev" aria-label="Previous photo">‹</button>
-  <figure><img id="lbImg" alt=""><figcaption><b id="lbTitle"></b><span id="lbLoc"></span><em id="lbCount"></em></figcaption></figure>
-  <button class="lb__nav lb__next" aria-label="Next photo">›</button>
+<div class="lb" id="lb" role="dialog" aria-modal="true" hidden>
+  <button class="lb__close" type="button" data-i18n-attr="aria-label:lb.close" aria-label="Close">×</button>
+  <button class="lb__nav lb__prev" type="button" data-i18n-attr="aria-label:lb.prev" aria-label="Previous photo">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption><b id="lbTitle"></b><span id="lbLoc"></span><em id="lbCount" dir="ltr"></em></figcaption></figure>
+  <button class="lb__nav lb__next" type="button" data-i18n-attr="aria-label:lb.next" aria-label="Next photo">›</button>
 </div>
 
+<script src="assets/js/i18n.js"></script>
 <script src="assets/projects.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

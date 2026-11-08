@@ -1,16 +1,18 @@
 (function () {
-  const CATS = [
-    { id: 'all', label: 'All projects' },
-    { id: 'aqua', label: 'Aqua Parks & Water Slides' },
-    { id: 'pools', label: 'Swimming Pools & Fountains' },
-    { id: 'kids', label: 'Kids Play Areas' },
-    { id: 'sports', label: 'Sports & Athletic Surfaces' },
-    { id: 'shades', label: 'Shades & Pergolas' },
-    { id: 'furniture', label: 'Site Furniture' },
-    { id: 'structures', label: 'Outdoor Structures' }
-  ];
-  const SHORT = { aqua: 'Aqua Park', pools: 'Pools & Fountains', kids: 'Kids Area', sports: 'Sports', shades: 'Shades', furniture: 'Site Furniture', structures: 'Structures' };
+  const D = window.I18N;
+  const PHONE = '201118161858';
+  const CAT_IDS = ['all', 'aqua', 'pools', 'kids', 'sports', 'shades', 'furniture', 'structures'];
 
+  let lang = document.documentElement.lang === 'ar' ? 'ar' : 'en';
+  const t = (k, vars) => {
+    let s = D[lang][k] !== undefined ? D[lang][k] : D.en[k];
+    if (vars && typeof s === 'string') Object.keys(vars).forEach(v => s = s.replace('{' + v + '}', vars[v]));
+    return s;
+  };
+  const tTitle = s => (D[lang].titles && D[lang].titles[s]) || s;
+  const tLoc = s => (s && D[lang].locations && D[lang].locations[s]) || s || '';
+
+  // ---------- Project data ----------
   const COVERS = ['pepsi-2.jpg', 'maldives-3.jpg', 'new-giza-sporting-club-1.jpg', 'kids-kids-play-area-palm-hills-sporting-club-2.jpg'];
   const projects = (window.PROJECTS || []).map(p => {
     p.images = p.images.slice().sort((a, b) => b.w * b.h - a.w * a.h);
@@ -19,70 +21,76 @@
     return p;
   });
   // Interleave categories so the "All" view shows a mix of work
-  const byCat = CATS.slice(1).map(c => projects.filter(p => p.cat === c.id));
+  const byCat = CAT_IDS.slice(1).map(c => projects.filter(p => p.cat === c));
   const mixed = [];
   for (let i = 0; byCat.some(l => l[i]); i++) byCat.forEach(l => l[i] && mixed.push(l[i]));
-  const LIMIT = 12;
-  const more = document.getElementById('more');
 
-  // Filters
+  const LIMIT = 12;
   const filters = document.querySelector('.filters');
   const grid = document.getElementById('grid');
-  CATS.forEach(c => {
-    const n = c.id === 'all' ? projects.length : projects.filter(p => p.cat === c.id).length;
-    const b = document.createElement('button');
-    b.className = 'chip'; b.setAttribute('role', 'tab'); b.dataset.cat = c.id;
-    b.setAttribute('aria-selected', c.id === 'all');
-    b.innerHTML = `${c.label}<b>${n}</b>`;
-    b.addEventListener('click', () => render(c.id));
-    filters.appendChild(b);
-  });
+  const more = document.getElementById('more');
+  let curCat = 'all', showAll = false;
+
+  function buildFilters() {
+    filters.innerHTML = '';
+    CAT_IDS.forEach(id => {
+      const n = id === 'all' ? projects.length : projects.filter(p => p.cat === id).length;
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.setAttribute('role', 'tab'); b.dataset.cat = id;
+      b.setAttribute('aria-selected', id === curCat);
+      b.innerHTML = `${t('cat.' + id)}<b>${n}</b>`;
+      b.addEventListener('click', () => render(id, false));
+      filters.appendChild(b);
+    });
+  }
 
   function render(cat, all) {
+    curCat = cat; showAll = !!all;
     filters.querySelectorAll('.chip').forEach(ch => ch.setAttribute('aria-selected', ch.dataset.cat === cat));
     let list = cat === 'all' ? mixed : projects.filter(p => p.cat === cat);
     const total = list.length;
-    if (!all && total > LIMIT) list = list.slice(0, LIMIT);
+    if (!showAll && total > LIMIT) list = list.slice(0, LIMIT);
     more.hidden = list.length === total;
-    more.textContent = `Show all ${total} projects`;
-    more.onclick = () => render(cat, true);
+    more.textContent = t('prj.more', { n: total });
     grid.innerHTML = '';
     list.forEach((p, i) => {
       const cover = p.images[0];
+      const title = tTitle(p.title), loc = tLoc(p.location);
       const el = document.createElement('article');
       el.className = 'card'; el.tabIndex = 0;
       el.style.animationDelay = Math.min(i, 12) * 40 + 'ms';
-      el.innerHTML = `<img src="${cover.src}" width="${cover.w}" height="${cover.h}" alt="${p.title}, ${p.location}" loading="lazy">
-        ${p.images.length > 1 ? `<span class="card__count">${p.images.length} photos</span>` : ''}
-        <div class="card__cap"><small>${SHORT[p.cat]}</small><h3>${p.title}</h3><p>${p.location || ''}</p></div>`;
+      el.innerHTML = `<img src="${cover.src}" width="${cover.w}" height="${cover.h}" alt="${title}${lang === 'ar' ? '، ' : ', '}${loc}" loading="lazy">
+        ${p.images.length > 1 ? `<span class="card__count">${t('prj.photos', { n: p.images.length })}</span>` : ''}
+        <div class="card__cap"><small>${t('tag.' + p.cat)}</small><h3>${title}</h3><p>${loc}</p></div>`;
       const open = () => openLb(p, 0);
       el.addEventListener('click', open);
       el.addEventListener('keydown', e => { if (e.key === 'Enter') open(); });
       grid.appendChild(el);
     });
   }
-  render('all');
+  more.addEventListener('click', () => render(curCat, true));
 
   // Service cards jump to filtered projects
   document.querySelectorAll('.svc').forEach(s => s.addEventListener('click', () => {
-    render(s.dataset.filter);
+    render(s.dataset.filter, false);
     document.getElementById('projects').scrollIntoView();
   }));
 
-  // Lightbox
+  // ---------- Lightbox ----------
   const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
   let cur = null, idx = 0;
   function openLb(p, i) { cur = p; idx = i; show(); lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('.lb__close').focus(); }
   function show() {
     const im = cur.images[idx];
-    lbImg.src = im.src; lbImg.alt = `${cur.title}, ${cur.location}`;
-    document.getElementById('lbTitle').textContent = cur.title;
-    document.getElementById('lbLoc').textContent = cur.location || '';
+    lbImg.src = im.src; lbImg.alt = tTitle(cur.title);
+    document.getElementById('lbTitle').textContent = tTitle(cur.title);
+    document.getElementById('lbLoc').textContent = tLoc(cur.location);
     document.getElementById('lbCount').textContent = cur.images.length > 1 ? `${idx + 1} / ${cur.images.length}` : '';
     lb.querySelectorAll('.lb__nav').forEach(b => b.style.visibility = cur.images.length > 1 ? 'visible' : 'hidden');
   }
   function step(d) { idx = (idx + d + cur.images.length) % cur.images.length; show(); }
   function close() { lb.hidden = true; document.body.style.overflow = ''; }
+  const rtl = () => lang === 'ar';
   lb.querySelector('.lb__close').onclick = close;
   lb.querySelector('.lb__prev').onclick = () => step(-1);
   lb.querySelector('.lb__next').onclick = () => step(1);
@@ -90,25 +98,24 @@
   document.addEventListener('keydown', e => {
     if (lb.hidden) return;
     if (e.key === 'Escape') close();
-    if (e.key === 'ArrowRight') step(1);
-    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(rtl() ? -1 : 1);
+    if (e.key === 'ArrowLeft') step(rtl() ? 1 : -1);
   });
   let tx = 0;
   lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
-  lb.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); });
+  lb.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 50) step((dx < 0) !== rtl() ? 1 : -1);
+  });
 
-  // Nav
+  // ---------- Nav ----------
   const nav = document.querySelector('.nav'), burger = document.querySelector('.nav__burger');
   burger.addEventListener('click', () => { const o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
   document.querySelectorAll('.nav__links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
   const onScroll = () => nav.classList.toggle('scrolled', scrollY > 10);
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  // Marquee: duplicate for seamless loop
-  const track = document.querySelector('.marquee__track');
-  track.innerHTML += track.innerHTML;
-
-  // Reveal on scroll
+  // ---------- Reveal on scroll ----------
   const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { threshold: .12 }) : null;
@@ -116,19 +123,50 @@
     if (io) { el.classList.add('reveal'); io.observe(el); }
   });
 
-  // Quote form -> WhatsApp or email
+  // ---------- Quote form -> WhatsApp or email ----------
   let via = 'wa';
   document.querySelectorAll('.form button').forEach(b => b.addEventListener('click', () => via = b.dataset.via));
   document.getElementById('quote').addEventListener('submit', e => {
     e.preventDefault();
     const f = new FormData(e.target);
-    const text = `Hello Partners for Construction,\n\nName: ${f.get('name')}\nPhone: ${f.get('phone')}\nService: ${f.get('service')}\n\n${f.get('msg') || ''}`;
+    const text = `${t('msg.hello')}\n\n${t('msg.name')}: ${f.get('name')}\n${t('msg.phone')}: ${f.get('phone')}\n${t('msg.service')}: ${f.get('service')}\n\n${f.get('msg') || ''}`;
     if (via === 'mail') {
-      location.href = `mailto:partnersforconstruction@gmail.com?subject=${encodeURIComponent('Quote request: ' + f.get('service'))}&body=${encodeURIComponent(text)}`;
+      location.href = `mailto:partnersforconstruction@gmail.com?subject=${encodeURIComponent(t('msg.subject') + f.get('service'))}&body=${encodeURIComponent(text)}`;
     } else {
-      window.open(`https://wa.me/201118161858?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+      window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
     }
   });
 
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  // ---------- Apply language ----------
+  function applyLang(l, save) {
+    lang = l;
+    const html = document.documentElement;
+    html.lang = l; html.dir = l === 'ar' ? 'rtl' : 'ltr';
+    document.title = t('meta.title');
+    document.querySelector('meta[name="description"]').setAttribute('content', t('meta.desc'));
+    document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+    document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+      el.dataset.i18nAttr.split(';').forEach(pair => { const [a, k] = pair.split(':'); el.setAttribute(a, t(k)); });
+    });
+    // Clients marquee (duplicated for a seamless loop)
+    const names = t('clients').map(n => `<span>${n}</span>`).join('');
+    document.getElementById('clients').innerHTML = names + names;
+    // Form service options
+    const sel = document.getElementById('svcSelect'), si = sel.selectedIndex;
+    sel.innerHTML = t('form.opts').map(o => `<option>${o}</option>`).join('');
+    if (si > 0) sel.selectedIndex = si;
+    document.getElementById('heroWa').href = `https://wa.me/${PHONE}?text=${encodeURIComponent(t('wa.quote'))}`;
+    document.getElementById('copy').textContent = t('ft.copy', { y: new Date().getFullYear() });
+    buildFilters();
+    render(curCat, showAll);
+    if (cur && !lb.hidden) show();
+    if (save) {
+      try { localStorage.setItem('pfc-lang', l); } catch (e) {}
+      const u = new URL(location.href); u.searchParams.set('lang', l);
+      try { history.replaceState(null, '', u); } catch (e) {}
+    }
+  }
+  document.getElementById('langBtn').addEventListener('click', () => applyLang(lang === 'ar' ? 'en' : 'ar', true));
+  applyLang(lang, false);
 })();
