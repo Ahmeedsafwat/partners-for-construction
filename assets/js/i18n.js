@@ -11,7 +11,6 @@ window.I18N = {
     'hero.lead': "Aqua parks and water slides, swimming pools and water fountains, kids' play areas, sports courts, shades and site furniture. Delivered turnkey for Egypt's leading developers, resorts and sporting clubs.",
     'hero.cta1': 'Explore our projects', 'hero.cta2': 'Get a quote on WhatsApp',
     'stat.1': 'completed works in our portfolio', 'stat.2': 'specialist services', 'stat.3': 'clubs, resorts & compounds served',
-    'badge.top': 'Turnkey delivery', 'badge.mid': 'Design to handover', 'badge.bot': 'One contract, one team',
 
     'cl.eyebrow': 'Our clients', 'cl.title': 'Trusted by leading developers, resorts and clubs',
     'cl.lead': 'We have delivered work for some of the best-known names in Egypt\'s real estate, hospitality and sports sectors.',
@@ -73,7 +72,6 @@ window.I18N = {
     'hero.lead': 'نعمل في تنفيذ الزحاليق المائية والنوافير ومناطق ألعاب الأطفال والملاعب والمظلات لكبرى شركات التطوير العقاري والفنادق والأندية في مصر، من مرحلة التصميم وحتى التسليم.',
     'hero.cta1': 'شاهد أعمالنا', 'hero.cta2': 'اطلب عرض سعر على واتساب',
     'stat.1': 'مشروع منفّذ', 'stat.2': 'تخصصات', 'stat.3': 'نادٍ ومنتجع وكمبوند',
-    'badge.top': 'تسليم مفتاح', 'badge.mid': 'من التصميم للتسليم', 'badge.bot': 'عقد واحد وفريق واحد',
 
     'cl.eyebrow': 'عملاؤنا', 'cl.title': 'نعتز بثقة كبرى الشركات والأندية في مصر',
     'cl.lead': 'نفذنا مشروعات لشركات تطوير عقاري ومنتجعات وأندية رياضية، وهذه بعض الأسماء التي عملنا معها.',
