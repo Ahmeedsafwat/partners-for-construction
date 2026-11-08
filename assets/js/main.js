@@ -9,6 +9,13 @@
     if (vars && typeof s === 'string') Object.keys(vars).forEach(v => s = s.replace('{' + v + '}', vars[v]));
     return s;
   };
+  const CLIENTS = [
+    ['palm-hills', 'Palm Hills'], ['tatweer', 'Tatweer Misr'], ['sodic', 'SODIC'], ['emaar-misr', 'Emaar Misr (Marassi)'],
+    ['ahly', 'Al Ahly Sporting Club'], ['newgiza', 'New Giza'], ['orascom', 'Orascom Development'], ['hassan-allam', 'Hassan Allam'],
+    ['pepsi', 'Pepsi'], ['jaz', 'Jaz Hotel Group'], ['fort-arabesque', 'Fort Arabesque Resort']
+  ];
+  // Arabic plural for "photos": 3-10 صور, 11+ صورة
+  const photos = n => lang === 'ar' ? (n <= 10 ? `${n} صور` : `${n} صورة`) : `${n} photos`;
   const tTitle = s => (D[lang].titles && D[lang].titles[s]) || s;
   const tLoc = s => (s && D[lang].locations && D[lang].locations[s]) || s || '';
 
@@ -60,7 +67,7 @@
       el.className = 'card'; el.tabIndex = 0;
       el.style.animationDelay = Math.min(i, 12) * 40 + 'ms';
       el.innerHTML = `<img src="${cover.src}" width="${cover.w}" height="${cover.h}" alt="${title}${lang === 'ar' ? '، ' : ', '}${loc}" loading="lazy">
-        ${p.images.length > 1 ? `<span class="card__count">${t('prj.photos', { n: p.images.length })}</span>` : ''}
+        ${p.images.length > 1 ? `<span class="card__count">${photos(p.images.length)}</span>` : ''}
         <div class="card__cap"><small>${t('tag.' + p.cat)}</small><h3>${title}</h3><p>${loc}</p></div>`;
       const open = () => openLb(p, 0);
       el.addEventListener('click', open);
@@ -149,9 +156,11 @@
     document.querySelectorAll('[data-i18n-attr]').forEach(el => {
       el.dataset.i18nAttr.split(';').forEach(pair => { const [a, k] = pair.split(':'); el.setAttribute(a, t(k)); });
     });
-    // Clients marquee (duplicated for a seamless loop)
-    const names = t('clients').map(n => `<span>${n}</span>`).join('');
-    document.getElementById('clients').innerHTML = names + names;
+    // Client logos
+    document.getElementById('logos').innerHTML = CLIENTS.map(c => {
+      const name = (D[lang].clientNames && D[lang].clientNames[c[0]]) || c[1];
+      return `<li title="${name}"><img src="assets/clients/${c[0]}.webp" alt="${name}" loading="lazy"></li>`;
+    }).join('');
     // Form service options
     const sel = document.getElementById('svcSelect'), si = sel.selectedIndex;
     sel.innerHTML = t('form.opts').map(o => `<option>${o}</option>`).join('');

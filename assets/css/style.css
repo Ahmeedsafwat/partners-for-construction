@@ -63,13 +63,12 @@ html[lang="ar"] .lang span{font-family:var(--head)}
 .hero__badge em{font-style:normal;font-size:.82rem;opacity:.85}
 
 /* CLIENTS */
-.clients{background:var(--navy);color:#fff;padding:1.4rem 0;overflow:hidden}
-.clients__label{text-align:center;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;opacity:.6;margin-bottom:.8rem}
-.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.marquee__track{display:flex;gap:3.2rem;width:max-content;animation:scroll 40s linear infinite;font-family:var(--head);font-weight:700;font-size:1.15rem;white-space:nowrap}
-.marquee__track span{opacity:.88}
-.marquee__track span::before{content:"●";color:var(--orange);font-size:.5rem;vertical-align:middle;margin-right:3.2rem}
-@keyframes scroll{to{transform:translateX(-50%)}}
+.clients{background:#fff;border-bottom:1px solid var(--line)}
+.sec-head--center{margin-inline:auto;text-align:center}
+.logos{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:1.1rem}
+.logos li{flex:0 0 calc((100% - 5 * 1.1rem) / 6);min-width:150px;height:120px;display:grid;place-items:center;padding:1.2rem 1.4rem;background:#fff;border:1px solid var(--line);border-radius:16px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.logos li:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+.logos img{max-width:100%;max-height:64px;width:auto;height:auto;object-fit:contain}
 
 /* SECTIONS */
 .section{padding:6rem 0}
@@ -185,6 +184,7 @@ html[lang="ar"] .lang span{font-family:var(--head)}
 }
 @media (max-width:420px){.nav__logo img{height:34px}.lang{padding:.45rem .7rem}}
 @media (max-width:900px){
+  .logos li{flex-basis:calc((100% - 2 * 1.1rem) / 3)}
   .hero__in,.about__in,.contact__in{grid-template-columns:1fr}
   .hero__mosaic{grid-template-rows:170px 140px 130px}
   .hero__badge{inset-inline-start:12px;bottom:12px}
@@ -199,6 +199,9 @@ html[lang="ar"] .lang span{font-family:var(--head)}
   .about__img{padding-inline-end:2rem;padding-bottom:2rem}
 }
 @media (max-width:600px){
+  .logos{gap:.7rem}
+  .logos li{flex-basis:calc(50% - .35rem);min-width:0;height:96px;padding:1rem}
+  .logos img{max-height:52px}
   .services,.steps{grid-template-columns:1fr}
   .stats{gap:1.2rem}
   .stats strong{font-size:1.7rem}
@@ -220,5 +223,4 @@ html[lang="ar"] .eyebrow,html[lang="ar"] .clients__label,html[lang="ar"] .hero__
 html[lang="ar"] .eyebrow{font-size:.9rem}
 html[dir="rtl"] .lb__nav{transform:scaleX(-1)}
 html[dir="rtl"] .nav__links a::after{left:auto;right:0}
-html[dir="rtl"] .marquee__track{animation-direction:reverse}
 bdi{unicode-bidi:isolate;direction:ltr}
