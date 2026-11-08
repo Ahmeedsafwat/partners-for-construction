@@ -2,7 +2,7 @@
 window.I18N = {
   en: {
     'meta.title': 'Partners for Construction | Aqua Parks, Swimming Pools, Fountains & Outdoor Works in Egypt',
-    'meta.desc': 'Partners for Construction designs, supplies and builds aqua parks, water slides, swimming pools, water fountains, kids play areas, sports courts, shades and site furniture across Egypt. Formerly Demas for Construction and Blue for Construction & Supplies.',
+    'meta.desc': 'Partners for Construction designs, supplies and builds aqua parks, water slides, swimming pools, water fountains, kids play areas, sports courts, shades and site furniture across Egypt.',
     'nav.services': 'Services', 'nav.projects': 'Projects', 'nav.clients': 'Clients', 'nav.about': 'About', 'nav.process': 'How we work', 'nav.contact': 'Contact',
     'nav.call': 'Call us', 'nav.menu': 'Open menu', 'lang.switch': 'عربي', 'lang.label': 'التبديل إلى العربية',
 
@@ -11,7 +11,7 @@ window.I18N = {
     'hero.lead': "Aqua parks and water slides, swimming pools and water fountains, kids' play areas, sports courts, shades and site furniture. Delivered turnkey for Egypt's leading developers, resorts and sporting clubs.",
     'hero.cta1': 'Explore our projects', 'hero.cta2': 'Get a quote on WhatsApp',
     'stat.1': 'completed works in our portfolio', 'stat.2': 'specialist services', 'stat.3': 'clubs, resorts & compounds served',
-    'badge.top': 'Now one company', 'badge.mid': 'Demas + Blue', 'badge.bot': 'are Partners for Construction',
+    'badge.top': 'Turnkey delivery', 'badge.mid': 'Design to handover', 'badge.bot': 'One contract, one team',
 
     'cl.eyebrow': 'Our clients', 'cl.title': 'Trusted by leading developers, resorts and clubs',
     'cl.lead': 'We have delivered work for some of the best-known names in Egypt\'s real estate, hospitality and sports sectors.',
@@ -35,9 +35,9 @@ window.I18N = {
     'cat.sports': 'Sports & Athletic Surfaces', 'cat.shades': 'Shades & Pergolas', 'cat.furniture': 'Site Furniture', 'cat.structures': 'Outdoor Structures',
     'tag.aqua': 'Aqua Park', 'tag.pools': 'Pools & Fountains', 'tag.kids': 'Kids Area', 'tag.sports': 'Sports', 'tag.shades': 'Shades', 'tag.furniture': 'Site Furniture', 'tag.structures': 'Structures',
 
-    'about.eyebrow': 'Who we are', 'about.title': 'Two specialist teams. One stronger partner.',
-    'about.p1': '<strong>Demas for Industrial &amp; Construction Solutions</strong> built its name on aqua parks, swimming pools, fountains and kids\' areas. <strong>Blue for Construction &amp; Supplies</strong> built its name on sports surfaces, shades and site furniture.',
-    'about.p2': 'Both companies have now come together under one name: <strong>Partners for Construction</strong>. Same people, same experience, now offering every service under one contract and one point of contact.',
+    'about.eyebrow': 'Who we are', 'about.title': 'One partner for every outdoor project',
+    'about.p1': 'Partners for Construction is a specialist contractor for leisure and outdoor projects: aqua parks, swimming pools, water fountains, kids\' play areas, sports surfaces, shades and site furniture.',
+    'about.p2': 'Our team handles every stage in-house, from design and supply to civil works, installation and maintenance, so you deal with <strong>one contract and one point of contact</strong> from start to finish.',
     'about.c1': 'Turnkey delivery: design, supply, civil works & installation', 'about.c2': 'Trusted by top developers, resorts and sporting clubs',
     'about.c3': 'Projects across Egypt and abroad (Maldives)', 'about.c4': 'Maintenance & rehabilitation of existing facilities',
 
@@ -49,7 +49,7 @@ window.I18N = {
 
     'ct.eyebrow': "Let's talk", 'ct.title': 'Planning a pool, aqua park or outdoor project?',
     'ct.lead': "Tell us about your site and we'll come back with ideas and a quotation.",
-    'ct.call': 'Call us', 'ct.wa': 'WhatsApp', 'ct.email': 'Email', 'ct.ig': 'Instagram',
+    'ct.call': 'Call us', 'ct.wa': 'WhatsApp', 'ct.email': 'Email', 'ct.ig': 'Instagram', 'ct.fb': 'Facebook',
     'form.title': 'Request a quote', 'form.name': 'Your name', 'form.phone': 'Phone', 'form.service': 'Service',
     'form.msg': 'Project details', 'form.ph': 'Location, size, timeline...', 'form.wa': 'Send via WhatsApp', 'form.mail': 'Send via Email',
     'form.opts': ['Aqua park & water slides', "Kids' pool slides & splash pad", 'Swimming pool', 'Water fountain', 'Kids play area', 'Sports court / surface', 'Shades & pergolas', 'Site furniture / outdoor structure', 'Maintenance'],
@@ -57,7 +57,6 @@ window.I18N = {
     'wa.quote': "Hello Partners for Construction, I'd like a quote.",
 
     'ft.tag': 'Aqua parks · Swimming pools · Water fountains · Kids areas · Sports surfaces · Shades · Site furniture',
-    'ft.former': 'Formerly Demas for Construction and Blue for Construction & Supplies.',
     'ft.copy': '© {y} Partners for Construction. All rights reserved.',
     'lb.close': 'Close', 'lb.prev': 'Previous photo', 'lb.next': 'Next photo', 'wa.float': 'Chat on WhatsApp',
     titles: {}, locations: {}
@@ -65,7 +64,7 @@ window.I18N = {
 
   ar: {
     'meta.title': 'بارتنرز للمقاولات | أكوا بارك وحمامات سباحة ونوافير وملاعب في مصر',
-    'meta.desc': 'بارتنرز للمقاولات (ديماس وبلو سابقاً) تصمم وتورد وتنفذ الأكوا بارك والزحاليق المائية وحمامات السباحة والنوافير ومناطق ألعاب الأطفال والملاعب والمظلات والفرش الخارجي في جميع أنحاء مصر.',
+    'meta.desc': 'بارتنرز للمقاولات تصمم وتورد وتنفذ الأكوا بارك والزحاليق المائية وحمامات السباحة والنوافير ومناطق ألعاب الأطفال والملاعب والمظلات والفرش الخارجي في جميع أنحاء مصر.',
     'nav.services': 'خدماتنا', 'nav.projects': 'أعمالنا', 'nav.clients': 'عملاؤنا', 'nav.about': 'من نحن', 'nav.process': 'طريقة العمل', 'nav.contact': 'تواصل معنا',
     'nav.call': 'اتصل بنا', 'nav.menu': 'فتح القائمة', 'lang.switch': 'English', 'lang.label': 'Switch to English',
 
@@ -74,7 +73,7 @@ window.I18N = {
     'hero.lead': 'نعمل في تنفيذ الزحاليق المائية والنوافير ومناطق ألعاب الأطفال والملاعب والمظلات لكبرى شركات التطوير العقاري والفنادق والأندية في مصر، من مرحلة التصميم وحتى التسليم.',
     'hero.cta1': 'شاهد أعمالنا', 'hero.cta2': 'اطلب عرض سعر على واتساب',
     'stat.1': 'مشروع منفّذ', 'stat.2': 'تخصصات', 'stat.3': 'نادٍ ومنتجع وكمبوند',
-    'badge.top': 'كيان واحد', 'badge.mid': 'ديماس + بلو', 'badge.bot': 'أصبحتا الآن بارتنرز للمقاولات',
+    'badge.top': 'تسليم مفتاح', 'badge.mid': 'من التصميم للتسليم', 'badge.bot': 'عقد واحد وفريق واحد',
 
     'cl.eyebrow': 'عملاؤنا', 'cl.title': 'نعتز بثقة كبرى الشركات والأندية في مصر',
     'cl.lead': 'نفذنا مشروعات لشركات تطوير عقاري ومنتجعات وأندية رياضية، وهذه بعض الأسماء التي عملنا معها.',
@@ -98,9 +97,9 @@ window.I18N = {
     'cat.sports': 'ملاعب وأرضيات رياضية', 'cat.shades': 'مظلات وبرجولات', 'cat.furniture': 'فرش خارجي', 'cat.structures': 'إنشاءات خفيفة',
     'tag.aqua': 'أكوا بارك', 'tag.pools': 'حمامات ونوافير', 'tag.kids': 'ألعاب أطفال', 'tag.sports': 'ملاعب', 'tag.shades': 'مظلات', 'tag.furniture': 'فرش خارجي', 'tag.structures': 'إنشاءات',
 
-    'about.eyebrow': 'من نحن', 'about.title': 'خبرة شركتين في كيان واحد',
-    'about.p1': 'تخصصت <strong>ديماس للحلول الصناعية والإنشائية</strong> في تنفيذ الأكوا بارك وحمامات السباحة والنوافير ومناطق الأطفال، بينما تخصصت <strong>بلو للمقاولات والتوريدات</strong> في الأرضيات الرياضية والمظلات والفرش الخارجي.',
-    'about.p2': 'اليوم اجتمعت الشركتان تحت اسم <strong>بارتنرز للمقاولات</strong>، بنفس الفريق ونفس الخبرة، ليحصل العميل على كل الخدمات من خلال عقد واحد وجهة تواصل واحدة.',
+    'about.eyebrow': 'من نحن', 'about.title': 'شريك واحد لكل مشروعاتك الخارجية',
+    'about.p1': 'بارتنرز للمقاولات شركة متخصصة في المشروعات الترفيهية والخارجية: الأكوا بارك وحمامات السباحة والنوافير ومناطق ألعاب الأطفال والأرضيات الرياضية والمظلات والفرش الخارجي.',
+    'about.p2': 'يتولى فريقنا كل مراحل المشروع، من التصميم والتوريد إلى الأعمال المدنية والتركيب والصيانة، لتتعامل مع <strong>عقد واحد وجهة تواصل واحدة</strong> من البداية للنهاية.',
     'about.c1': 'تنفيذ تسليم مفتاح: تصميم وتوريد وأعمال مدنية وتركيب', 'about.c2': 'عملاء من كبرى شركات التطوير العقاري والفنادق والأندية',
     'about.c3': 'مشروعات داخل مصر وخارجها (جزر المالديف)', 'about.c4': 'صيانة وإعادة تأهيل المنشآت القائمة',
 
@@ -112,7 +111,7 @@ window.I18N = {
 
     'ct.eyebrow': 'تواصل معنا', 'ct.title': 'تخطط لحمام سباحة أو أكوا بارك أو مشروع ترفيهي؟',
     'ct.lead': 'أرسل لنا تفاصيل موقعك، وسنتواصل معك بالأفكار وعرض السعر.',
-    'ct.call': 'اتصل بنا', 'ct.wa': 'واتساب', 'ct.email': 'البريد الإلكتروني', 'ct.ig': 'إنستجرام',
+    'ct.call': 'اتصل بنا', 'ct.wa': 'واتساب', 'ct.email': 'البريد الإلكتروني', 'ct.ig': 'إنستجرام', 'ct.fb': 'فيسبوك',
     'form.title': 'اطلب عرض سعر', 'form.name': 'الاسم', 'form.phone': 'رقم الموبايل', 'form.service': 'نوع الخدمة',
     'form.msg': 'تفاصيل المشروع', 'form.ph': 'الموقع والمساحة والموعد المتوقع للتنفيذ...', 'form.wa': 'إرسال عبر واتساب', 'form.mail': 'إرسال عبر البريد',
     'form.opts': ['أكوا بارك وزحاليق مائية', 'زحاليق وألعاب مائية للأطفال', 'حمام سباحة', 'نافورة', 'منطقة ألعاب أطفال', 'ملعب أو أرضيات رياضية', 'مظلات وبرجولات', 'فرش خارجي أو إنشاءات خفيفة', 'صيانة'],
@@ -120,7 +119,6 @@ window.I18N = {
     'wa.quote': 'السلام عليكم، أرغب في الحصول على عرض سعر.',
 
     'ft.tag': 'أكوا بارك · حمامات سباحة · نوافير · ألعاب أطفال · ملاعب · مظلات · فرش خارجي',
-    'ft.former': 'ديماس للمقاولات وبلو للمقاولات والتوريدات سابقاً.',
     'ft.copy': '© {y} بارتنرز للمقاولات. جميع الحقوق محفوظة.',
     'lb.close': 'إغلاق', 'lb.prev': 'الصورة السابقة', 'lb.next': 'الصورة التالية', 'wa.float': 'تواصل معنا على واتساب',
     titles: {
